@@ -30,12 +30,12 @@ Please ensure you have the prerequisites installed ahead of the workshop session
 
 * Change into the newly cloned directory: `cd pirategold`. Clone the application using the instructions in the terminal if the clone did not complete successfully.
 
-* Run the following commands to set up your Cabal sandbox and install the dependencies.
+* Run the following commands to set up a Cabal sandbox and install the dependencies.
 
         cabal sandbox init
         cabal install --only-dependencies
 
-* To run the app locally, start PostgreSQL, change the default database environment variable values in _src/Main.hs_ to match your local PostgreSQL instance, and issue the following command:
+* To run the app locally start PostgreSQL, change the default database environment variable values in _src/Main.hs_ to match your local PostgreSQL instance, and issue the following command from the root of the repository:
 
         cabal run 127.0.0.1 4000
 
