@@ -10,7 +10,9 @@ These instructions may change in the lead up to the workshop, so please check fo
 
 If you are using Windows, consider installing a Linux VM on your machine prior to the workshop and working within this. It will make life easier. 
 
-# Prerequisites (please do these ahead of the workshop)
+Please ensure you have the prerequisites installed ahead of the workshop session.
+
+# Prerequisites 
 
 * Install the Haskell Platform (http://www.haskell.org/platform). Make sure you have GHC version 7.6 or above and Cabal version 1.18 or above (you can use the command `cabal update` to get the latest version).
 * Install Git, Ruby, and the RHC Client tools (https://www.openshift.com/developers/rhc-client-tools-install).
@@ -19,13 +21,10 @@ If you are using Windows, consider installing a Linux VM on your machine prior t
 # Getting Started
 
 * Run the command `rhc setup` to configure the RHC client tools.
-* To create an OpenShift application using the Haskell community cartridge, use the following command:
-    rhc app create pirategold http://www.accursoft.com/cartridges/scotty.yml postgresql-9.2 --from-code=http://github.com/codemiller/fp-in-the-cloud.git 
-* Change into the newly cloned directory. Clone the application using the instructions in the terminal if the clone did not complete successfully.
-    cd pirategold
-* Run the following commands to set up your Cabal sandbox and install the dependencies.
-    cabal sandbox init
-    cabal install --only-dependencies 
-* To run the app locally, start PostgreSQL, change the default database environment variable values in _src/Main.hs_ to match your local PostgreSQL instance, and issue the following command:
-    cabal run 127.0.0.1 4000
+* To create an OpenShift application using the Haskell community cartridge, use the following command: `rhc app create pirategold http://www.accursoft.com/cartridges/scotty.yml postgresql-9.2 --from-code=http://github.com/codemiller/fp-in-the-cloud.git`
+* Change into the newly cloned directory: `cd pirategold`. Clone the application using the instructions in the terminal if the clone did not complete successfully. 
+* Run the following commands to set up your Cabal sandbox and install the dependencies.  
+    `cabal sandbox init
+    cabal install --only-dependencies`
+* To run the app locally, start PostgreSQL, change the default database environment variable values in _src/Main.hs_ to match your local PostgreSQL instance, and issue the following command: `cabal run 127.0.0.1 4000`
 
