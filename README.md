@@ -83,26 +83,28 @@ Here is a rough schedule for the afternoon:
 
 Attempt what appeals to you and ask the instructors for help if you need it.
 
-* Add code to reject empty POST parameters 
-* Add a Favicon for the app
-* Add code to update phrases
-* Add code to delete phrases
-* Add code to make it possible to GET phrases by id 
-* Add the ability to add a photo for each phrase, and have this displayed in the listing
-* Add the Clay Haskell CSS preprocessor to the project and change it to generate CSS with this 
-* Add HUnit/QuickCheck tests for the application, using the _test-framework_ or _tasty_ libraries 
-* Add the Aeson JSON library to the project and change the app to be able to represent phrases as JSON 
-* Add Fay to the app, and use it to generate some JavaScript 
-* Complete your own enhancements to the app
+* Change the phrase listing on the app's index page to show the phrases in upper case.
+* Complete the _toPigLatin_ function in  _src/Transform.hs_ and use it to display a [Pig Latin](http://en.wikipedia.org/wiki/Pig_Latin) translation for each phrase on the app's index page.
+* Add code to reject empty POST parameters.
+* Add a Favicon for the app.
+* Add code to update phrases.
+* Add code to delete phrases.
+* Add code to make it possible to GET phrases by id.
+* Add the ability to add a photo for each phrase, and have this displayed in the listing.
+* Add more DocTest tests to the application.
+* Add the Clay Haskell CSS preprocessor to the project and change it to generate CSS with this.
+* Add the Aeson JSON library to the project and change the app to be able to represent phrases as JSON.
+* Add Fay to the app, and use it to generate some JavaScript.
+* Complete your own enhancements to the app.
 
 # Links
 
 General:
 
-* [Hoogle](http://www.haskell.org/hoogle/): Search Haskell libraries by function name or type signature
-* [Hackage](http://hackage.haskell.org/): Search for Haskell libraries. You will find information here about _scotty_, _blaze_, _postgresql-simple_, _test-framework_, _tasty_, _Clay_, _HUnit_, _QuickCheck_, _aeson_, _fay_, and much more.
+* [Hoogle](http://www.haskell.org/hoogle/): Search Haskell libraries by function name or type signature.
+* [Hackage](http://hackage.haskell.org/): Search for Haskell libraries. You will find information here about _scotty_, _blaze_, _postgresql-simple_, _doctest_, _Clay_, _HUnit_, _QuickCheck_, _aeson_, _fay_, and much more.
 * [Learn You A Haskell](http://learnyouahaskell.com/): Learn about Haskell syntax and functional programming concepts, online for free.
-* [Haskell for Web Developers](http://www.stephendiehl.com/posts/haskell_web.html): Gives an overview of how web programming can be done in Haskell
+* [Haskell for Web Developers](http://www.stephendiehl.com/posts/haskell_web.html): Gives an overview of how web programming can be done in Haskell.
 
 Tutorials:
 
