@@ -84,7 +84,7 @@ Here is a rough schedule for the afternoon:
 Attempt what appeals to you and ask the instructors for help if you need it.
 
 * Change the phrase listing on the app's index page to show the phrases in upper case.
-* Complete the _toPigLatin_ function in  _src/Transform.hs_ and use it to display a [Pig Latin](http://en.wikipedia.org/wiki/Pig_Latin) translation for each definition on the app's index page.
+* Complete the _toPigLatin_ function in  _src/Transform.hs_ and use it to display a [Pig Latin](http://en.wikipedia.org/wiki/Pig_Latin) translation for each phrase on the app's index page.
 * Add code to reject empty POST parameters.
 * Add a Favicon for the app.
 * Add code to update phrases.
