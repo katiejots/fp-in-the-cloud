@@ -36,12 +36,19 @@ createDefinitionTable conn = execute_ conn
 allDefinitions :: Connection -> IO [Definition]
 allDefinitions conn = query_ conn "SELECT phrase, meaning FROM definition"
 
+-- |
+-- 
+-- prop> case atLeastOneRowChanged n of Right n' -> n' == n; Left _ -> True
+atLeastOneRowChanged :: Int64 -> Either String Int64
+atLeastOneRowChanged 0 = Left "Internal error"
+atLeastOneRowChanged n = Right n
+
 addDefinition :: Connection -> Definition -> IO (Either String Int64)
-addDefinition conn def = executeAdd `catchIOError` handleFormatError 
-                     where 
-                       executeAdd = do 
-                         rowsChanged <- execute conn "INSERT INTO definition (phrase, meaning) VALUES (?,?)"
-                           (phrase def, meaning def)
-                         return (case rowsChanged of 0 -> Left "Internal error"
-                                                     _ -> Right rowsChanged)
-                       handleFormatError _ = return (Left "Internal formatting error")
+addDefinition conn (Definition ph mn) =
+    executeAdd `catchIOError` handleFormatError 
+      where 
+        executeAdd = do 
+          rowsChanged <- execute conn "INSERT INTO definition (phrase, meaning) VALUES (?,?)"
+            (ph, mn)
+          return (atLeastOneRowChanged rowsChanged)
+        handleFormatError _ = return (Left "Internal formatting error")
