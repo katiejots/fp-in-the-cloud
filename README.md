@@ -89,13 +89,13 @@ Attempt what appeals to you and ask the instructors for help if you need it.
 * Add a Favicon for the app.
 * Add code to update phrases.
 * Add code to delete phrases.
-* Add code to make it possible to GET phrases by id 
-* Add the ability to add a photo for each phrase, and have this displayed in the listing
-* Add more DocTest tests to the application 
-* Add the Clay Haskell CSS preprocessor to the project and change it to generate CSS with this 
-* Add the Aeson JSON library to the project and change the app to be able to represent phrases as JSON 
-* Add Fay to the app, and use it to generate some JavaScript 
-* Complete your own enhancements to the app
+* Add code to make it possible to GET phrases by id.
+* Add the ability to add a photo for each phrase, and have this displayed in the listing.
+* Add more DocTest tests to the application.
+* Add the Clay Haskell CSS preprocessor to the project and change it to generate CSS with this.
+* Add the Aeson JSON library to the project and change the app to be able to represent phrases as JSON.
+* Add Fay to the app, and use it to generate some JavaScript.
+* Complete your own enhancements to the app.
 
 # Links
 
