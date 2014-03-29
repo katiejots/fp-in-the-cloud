@@ -24,7 +24,7 @@ instance FromRow Definition where
   fromRow = Definition <$> field <*> field
 
 instance ToRow Definition where
-  toRow (Definition p m) = [toField p, toField m]
+  toRow (Definition p m) = map toField [p, m]
 
 createDefinitionTable :: Connection -> IO Int64 
 createDefinitionTable conn = execute_ conn
