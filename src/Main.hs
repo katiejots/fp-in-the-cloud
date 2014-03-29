@@ -47,12 +47,12 @@ main = do
            defs <- liftIO (Def.allDefinitions conn)
            html (View.Index.render defs)
 
-         get "/add" $ do
+         get "/add" $
            html View.Add.render
 
          post "/add" $ do
-           phrase <- param "phrase" `rescue` (const next)
-           meaning <- param "meaning" `rescue` (const next)
+           phrase <- param "phrase" `rescue` const next
+           meaning <- param "meaning" `rescue` const next
            added <- liftIO (Def.addDefinition conn (Def.Definition phrase meaning))
            case added of
              Left errorMessage -> do
