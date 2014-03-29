@@ -43,7 +43,7 @@ Please ensure you have the prerequisites installed ahead of the workshop session
 
         cabal run 127.0.0.1 4000
 
-Go to http://localhost:4000 in your browser to view the application.
+Go to [http://localhost:4000](http://localhost:4000) in your browser to view the application.
 
 # Making Changes
 
@@ -57,7 +57,7 @@ Go to http://localhost:4000 in your browser to view the application.
 
 * If something goes wrong with the application instance running in the cloud, you can use the command `rhc tail` to view the logs and `rhc ssh` to connect to the container (gear) in which your application is running. These commands should be issued from within the _pirategold_ directory, or else you should append `-a pirategold` to the commands to let RHC know to which app to apply them.
 
-* To connect to the PostgreSQL instance running on OpenShift, you can SSH to your application using the command mentioned above and issue the command `psql`. If you have PostgreSQL installed locally, alternatively you can use port forwarding and access the database as if it were local. To do this, you will need the database credentials; you can view them with the command `rhc app show`. Use commands such as the following to start port forwarding and connect to the DB:
+* To connect to the PostgreSQL instance running on OpenShift, you can SSH to your application with `rhc ssh` and issue the command `psql`. If you have PostgreSQL installed locally, alternatively you can use port forwarding and access the database as if it were local. To do this, you will need the database credentials; you can view them with the command `rhc app show`. Use commands such as the following to start port forwarding and connect to the DB:
 
         rhc port-forward
         (open another terminal or put above into the background)
@@ -76,13 +76,14 @@ Here is a rough schedule for the afternoon:
 * 3.20pm: Break
 * 3.30pm: Haskell on OpenShift primer
 * 4pm: Challenges
-* 5.20pm: Workshop close
+* 5.15pm: Showcase and wrap-up 
+* 5.30pm: Workshop close
 
 # Challenges
 
 Attempt what appeals to you and ask the instructors for help if you need it.
 
-* Add code to reject empty post parameters 
+* Add code to reject empty POST parameters 
 * Add a Favicon for the app
 * Add code to update phrases
 * Add code to delete phrases
@@ -92,6 +93,26 @@ Attempt what appeals to you and ask the instructors for help if you need it.
 * Add HUnit/QuickCheck tests for the application, using the _test-framework_ or _tasty_ libraries 
 * Add the Aeson JSON library to the project and change the app to be able to represent phrases as JSON 
 * Add Fay to the app, and use it to generate some JavaScript 
-* Complete your own enhancements to the app if desired
+* Complete your own enhancements to the app
 
+# Links
 
+General:
+
+* [Hoogle](http://www.haskell.org/hoogle/): Search Haskell libraries by function name or type signature
+* [Hackage](http://hackage.haskell.org/): Search for Haskell libraries. You will find information here about _scotty_, _blaze_, _postgresql-simple_, _test-framework_, _tasty_, _Clay_, _HUnit_, _QuickCheck_, _aeson_, _fay_, and much more.
+* [Learn You A Haskell](http://learnyouahaskell.com/): Learn about Haskell syntax and functional programming concepts, online for free.
+* [Haskell for Web Developers](http://www.stephendiehl.com/posts/haskell_web.html): Gives an overview of how web programming can be done in Haskell
+
+Tutorials:
+
+* [Brief Scotty Tutorial](http://ocharles.org.uk/blog/posts/2013-12-05-24-days-of-hackage-scotty.html)
+* [More In-Depth Scotty Tutorial](http://adit.io/posts/2013-04-15-making-a-website-with-haskell.html)
+* [Postgresql-Simple Tutorial](http://ocharles.org.uk/blog/posts/2012-12-03-postgresql-simple.html)
+* [Brief Blaze Tutorial](http://ocharles.org.uk/blog/posts/2012-12-22-24-days-of-hackage-blaze.html)
+* [Another Blaze HTML Tutorial](http://jaspervdj.be/blaze/tutorial.html)
+
+Code examples:
+
+* [Scotty Starter App](https://github.com/scotty-web/scotty-starter)
+* [Simple Shoes Scotty App](https://github.com/dalaing/shoes-simple/)
