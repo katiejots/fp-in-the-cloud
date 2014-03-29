@@ -65,6 +65,18 @@ Go to [http://localhost:4000](http://localhost:4000) in your browser to view the
 
 Notice this command connects on port 5433, rather than the standard 5432. OpenShift will use this port if you already have PostgreSQL running locally on 5432. Substitute whichever port appears in the `rhc port-forward` output for the PostgreSQL service, and the username/password for your instance.
 
+# Running the Tests
+
+The app repository contains some examples and properties, created with `doctest`. Examples begin with `>>>` while properties begin with `prop>`. These serve as documentation and you should also be able to run them (some participants may have trouble with this, depending on their operating system). To do so, issue the following commands in the _pirategold_ directory:
+
+    cabal configure --enable-tests
+    cabal build
+    cabal test
+
+Alternatively, you may run the tests in a single source file by using `doctest` explicitly. From the _pirategold_ directory:
+
+    doctest -isrc -Wall -fno-warn-type-defaults <filename.hs>
+
 # Workshop Outline
 
 Here is a rough schedule for the afternoon:
