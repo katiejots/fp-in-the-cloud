@@ -116,6 +116,7 @@ General:
 * [Hackage](http://hackage.haskell.org/): Search for Haskell libraries. You will find information here about _scotty_, _blaze_, _postgresql-simple_, _doctest_, _Clay_, _HUnit_, _QuickCheck_, _aeson_, _fay_, and much more.
 * [Learn You A Haskell](http://learnyouahaskell.com/): Learn about Haskell syntax and functional programming concepts, online for free.
 * [Haskell for Web Developers](http://www.stephendiehl.com/posts/haskell_web.html): Gives an overview of how web programming can be done in Haskell.
+* [Haskell OpenShift Cartridge (Community Created)](https://github.com/accursoft/Haskell-Cloud)
 
 Tutorials:
 
