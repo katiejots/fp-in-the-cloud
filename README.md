@@ -28,13 +28,19 @@ Please ensure you have the prerequisites installed ahead of the workshop session
 
 * Run the command `rhc setup` to configure the RHC client tools to talk to whichever OpenShift instance you wish to use. RHC will use OpenShift Online's servers by default; this can be changed in _$HOME/.openshift/express.conf_.
 
-* To create the OpenShift _PirateGold_ application using the Haskell community cartridge and PostgreSQL cartridge, execute the following command:
+* To create an OpenShift application called _pirategold_ using the Haskell community cartridge and PostgreSQL cartridge, execute the following command:
 
-        rhc app create pirategold http://www.accursoft.com/cartridges/scotty.yml postgresql-9.2 --from-code=http://github.com/codemiller/fp-in-the-cloud.git
+        rhc app create pirategold http://www.accursoft.com/cartridges/scotty.yml postgresql-9.2
 
 * Change into the newly cloned directory: `cd pirategold`. If something went wrong and the app repository was not cloned, clone it now with the command `rhc git-clone pirategold`.
 
-* Run the following commands to set up a Cabal sandbox and install the dependencies.
+* Merge in the base code for the application provided in this repository with the following command:
+
+        git pull -s recursive -X theirs git://github.com/codemiller/fp-in-the-cloud.git
+
+* Push the base app to the cloud with the command `git push`. This command will install all the dependencies in your OpenShift gear (container), so will take quite some time to complete.
+
+* Run the following commands to set up a Cabal sandbox and install the dependencies locally.
 
         cabal sandbox init
         cabal install --only-dependencies
