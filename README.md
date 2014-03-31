@@ -24,7 +24,7 @@ Please ensure you have the prerequisites installed ahead of the workshop session
 
 # Getting Started
 
-* Retrieve your OpenShift Online account credentials, and/or if you wish, create an account on the Codemania instance of OpenShift. The Codemania instance will provide more resources, but will run for the time of the conference only; apps should be migrated from this instance using `rhc snapshot` before Saturday, April 5, after which time they will be deleted.
+* Retrieve your OpenShift Online account credentials, and/or if you wish, ask Katie for an account on the Codemania instance of OpenShift (Katie will supply the server URL). The Codemania instance will be faster and provide more resources, but will run for the time of the conference only; apps should be migrated from this instance using `rhc snapshot` before Saturday, April 5, after which time they will be deleted.
 
 * Run the command `rhc setup` to configure the RHC client tools to talk to whichever OpenShift instance you wish to use. RHC will use OpenShift Online's servers by default; this can be changed in _$HOME/.openshift/express.conf_.
 
