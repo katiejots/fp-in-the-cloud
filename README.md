@@ -131,6 +131,7 @@ Tutorials:
 * [Postgresql-Simple Tutorial](http://ocharles.org.uk/blog/posts/2012-12-03-postgresql-simple.html)
 * [Brief Blaze Tutorial](http://ocharles.org.uk/blog/posts/2012-12-22-24-days-of-hackage-blaze.html)
 * [Another Blaze HTML Tutorial](http://jaspervdj.be/blaze/tutorial.html)
+* [The NICTA Haskell Course](https://github.com/nicta/course)
 
 Code examples:
 
