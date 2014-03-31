@@ -14,7 +14,7 @@ Please ensure you have the prerequisites installed ahead of the workshop session
 
 # Prerequisites 
 
-* Install the [Haskell Platform](http://www.haskell.org/platform). Make sure you have GHC version 7.6 or above and Cabal version 1.18 or above (you can use the command `cabal update` to get the latest version).
+* Install the [Haskell Platform](http://www.haskell.org/platform). Make sure you have GHC version 7.6 or above and Cabal version 1.18 or above (you can use the commands `cabal install cabal-install --global` and `cabal update` to get the latest version).
 
 * Install Git, Ruby, and the [RHC Client tools](https://www.openshift.com/developers/rhc-client-tools-install).
 
@@ -24,7 +24,7 @@ Please ensure you have the prerequisites installed ahead of the workshop session
 
 # Getting Started
 
-* Retrieve your OpenShift Online account credentials, and/or if you wish, create an account on the Codemania instance of OpenShift Enterprise. The Codemania instance will provide more resources, but will run for the time of the conference only; apps should be migrated from this instance using `rhc snapshot` before Saturday, April 5, after which time they will be deleted.
+* Retrieve your OpenShift Online account credentials, and/or if you wish, create an account on the Codemania instance of OpenShift. The Codemania instance will provide more resources, but will run for the time of the conference only; apps should be migrated from this instance using `rhc snapshot` before Saturday, April 5, after which time they will be deleted.
 
 * Run the command `rhc setup` to configure the RHC client tools to talk to whichever OpenShift instance you wish to use. RHC will use OpenShift Online's servers by default; this can be changed in _$HOME/.openshift/express.conf_.
 
