@@ -28,7 +28,7 @@ Please ensure you have the prerequisites installed ahead of the workshop session
 
 * Run the command `rhc setup` to configure the RHC client tools to talk to whichever OpenShift instance you wish to use. RHC will use OpenShift Online's servers by default; this can be changed in _$HOME/.openshift/express.conf_.
 
-* To create an OpenShift application called _pirategold_ using the Haskell community cartridge and PostgreSQL cartridge, execute the following command:
+* Change into the directory in which you wish to do your workshop development work. To create an OpenShift application called _pirategold_ using the Haskell community cartridge and PostgreSQL cartridge, execute the following command:
 
         rhc app create pirategold http://www.accursoft.com/cartridges/scotty.yml postgresql-9.2
 
