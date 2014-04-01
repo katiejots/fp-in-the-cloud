@@ -1,0 +1,46 @@
+body.main {
+  background: rgb(25, 165, 230) url('/images/ship.svg') right bottom no-repeat;
+}
+
+body.add, body.added {
+  background: rgb(25, 165, 230) url('/images/parrot.jpg') no-repeat;
+  background-size: cover;
+}
+
+body.error {
+  background: rgb(25, 165, 230) url('/images/skull.svg') 30% no-repeat;
+}
+
+div.head {
+  background: rgba(5,35,60,0.8) url('/images/pirate.svg') 99% no-repeat;
+  padding: 1.5em;
+  max-width: 70em;
+  margin: 2em 2em auto;
+  color: #fff;
+  font-family: "dejavu sans mono", "source code pro", "droid sans mono", monaco, monospace;
+  transition: all 0.5s ease;
+}
+
+div.head:hover {
+  background-color: #fff;
+  color: #000;
+}
+
+ul {
+  list-style: none;
+  display: block;
+  font-size: 1.3em;
+}
+
+li span.phrase {
+  font-weight: bold;
+  text-align: center;
+}
+  
+a {
+  font-size: 1.5em;
+  font-weight: bold;
+  color: rgb(5,40,130);
+  text-decoration: none;
+  padding: 20px;
+}

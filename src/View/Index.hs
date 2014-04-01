@@ -35,9 +35,10 @@ import qualified Text.Blaze.Html5 as H
 render :: [Definition] -> D.Text
 render definitions = renderHtml . H.docTypeHtml $ do
   header
-  H.body $ do
-    H.h1 "Ahoy! Welcome to Pirate Gold."
-    H.h2 "'ere be some golden terms ye ought to be using me hearties..."
+  H.body H.! class_ "main" $ do
+    H.div H.! class_ "head" $ do
+      H.h1 "Ahoy! Welcome to Pirate Gold."
+      H.h2 "'ere be some golden terms ye ought to be using me hearties..."
     if null definitions 
     then H.p "There are no definitions yet."
     else H.ul . forM_ definitions $ (\def -> H.li $ do 
