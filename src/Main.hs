@@ -37,14 +37,16 @@ dbConn = do connInfo <- dbConnInfo
 
 main :: IO ()
 main = do 
-    (ip:port:_) <- getArgs
-    conn <- dbConn
-    _ <- Def.createDefinitionTable conn
+    args <- getArgs
+    case args of
+      [ip,port] -> do conn <- dbConn
+                      _ <- Def.createDefinitionTable conn
 
-    scottyOpts (opts ip (read port)) $ do
-        middleware (staticPolicy (noDots >-> addBase "resources"))
-        middleware logStdoutDev
-        processRoutes conn
+                      scottyOpts (opts ip (read port)) $ do
+                          middleware (staticPolicy (noDots >-> addBase "resources"))
+                          middleware logStdoutDev
+                          processRoutes conn
+      _ -> putStrLn "Required arguments [ip] [port]"
 
 processRoutes :: Connection -> ScottyM ()
 processRoutes conn = do
