@@ -65,8 +65,8 @@ renderAddForm =
 
 postDefinition :: Connection -> ActionM ()
 postDefinition conn = do
-    p <- params 
-    maybe returnError addDef (mapM (getParam p) ["phrase", "meaning"])
+    prms <- params 
+    maybe returnError addDef (mapM (getParam prms) ["phrase", "meaning"])
     where getParam parameters name = lookup name parameters
           returnError = createResponse (View.Error.render "Missing parameter") badRequest400
           addDef (p:m:_) = do 
