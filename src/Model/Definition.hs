@@ -7,7 +7,7 @@ module Model.Definition (
             , addDefinition
             ) where
 
-import Data.Text (Text)
+import Data.Text.Lazy (Text)
 import Control.Applicative
 import Data.Int (Int64)
 import Database.PostgreSQL.Simple

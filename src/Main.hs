@@ -11,6 +11,7 @@ import Network.Wai.Handler.Warp (settingsPort, settingsHost)
 import Data.Conduit.Network
 import Network.HTTP.Types.Status
 import Database.PostgreSQL.Simple
+import qualified Data.Text.Lazy as D
 import qualified Model.Definition as Def
 import qualified View.Index
 import qualified View.Add
@@ -36,32 +37,45 @@ dbConn = do connInfo <- dbConnInfo
 
 main :: IO ()
 main = do 
-     (ip:port:_) <- getArgs
-     conn <- dbConn
-     _ <- Def.createDefinitionTable conn
+    (ip:port:_) <- getArgs
+    conn <- dbConn
+    _ <- Def.createDefinitionTable conn
 
-     scottyOpts (opts ip (read port)) $ do
-         middleware (staticPolicy (noDots >-> addBase "resources"))
-         middleware logStdoutDev
-         get "/" $ do
-           defs <- liftIO (Def.allDefinitions conn)
-           html (View.Index.render defs)
+    scottyOpts (opts ip (read port)) $ do
+        middleware (staticPolicy (noDots >-> addBase "resources"))
+        middleware logStdoutDev
+        processRoutes conn
 
-         get "/add" $
-           html View.Add.render
+processRoutes :: Connection -> ScottyM ()
+processRoutes conn = do
+    get "/" (listDefinitions conn)
+    get "/add" renderAddForm 
+    post "/add" (postDefinition conn)
 
-         post "/add" $ do
-           phrase <- param "phrase" `rescue` const next
-           meaning <- param "meaning" `rescue` const next
-           added <- liftIO (Def.addDefinition conn (Def.Definition phrase meaning))
-           case added of
-             Left errorMessage -> do
-               html (View.Error.render errorMessage)
-               status internalServerError500
+listDefinitions :: Connection -> ActionM ()
+listDefinitions conn = do
+    defs <- liftIO (Def.allDefinitions conn)
+    html (View.Index.render defs)
 
-             Right _ -> 
-               html View.Added.render
+renderAddForm :: ActionM ()
+renderAddForm = do
+    html View.Add.render
 
-         post "/add" $ do
-           html (View.Error.render "Bad request")
-           status badRequest400 
+postDefinition :: Connection -> ActionM ()
+postDefinition conn = do
+    p <- params 
+    maybe returnError addDef (sequence [getParam "phrase" p, getParam "meaning" p])
+    where getParam name parameters = lookup name parameters
+          returnError = createResponse (View.Error.render "Missing parameter") badRequest400
+          addDef (p:m:_) = do 
+              added <- liftIO (Def.addDefinition conn (Def.Definition p m))
+              case added of
+                  Left errorMessage -> createResponse (View.Error.render errorMessage) internalServerError500
+                  Right _ -> createResponse View.Added.render ok200 
+          addDef _ = do 
+              createResponse (View.Error.render "Internal error") internalServerError500
+
+createResponse :: D.Text -> Status -> ActionM ()
+createResponse view stat = do
+           html view
+           status stat 
