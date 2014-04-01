@@ -3,8 +3,8 @@ module Transform (
        ) where
 
 import Model.Definition
-import Data.Text
+import Data.Text.Lazy as D
 
-toPigLatin :: [Definition] -> [(Definition, Text)]
+toPigLatin :: [Definition] -> [(Definition, D.Text)]
 toPigLatin defs = error "todo"
 
