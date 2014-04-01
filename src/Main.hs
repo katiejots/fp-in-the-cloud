@@ -60,13 +60,13 @@ listDefinitions conn = do
     html (View.Index.render defs)
 
 renderAddForm :: ActionM ()
-renderAddForm = do
+renderAddForm = 
     html View.Add.render
 
 postDefinition :: Connection -> ActionM ()
 postDefinition conn = do
     p <- params 
-    maybe returnError addDef (sequence (map (getParam p) ["phrase", "meaning"]))
+    maybe returnError addDef (mapM (getParam p) ["phrase", "meaning"])
     where getParam parameters name = lookup name parameters
           returnError = createResponse (View.Error.render "Missing parameter") badRequest400
           addDef (p:m:_) = do 
@@ -74,7 +74,7 @@ postDefinition conn = do
               case added of
                   Left errorMessage -> createResponse (View.Error.render errorMessage) internalServerError500
                   Right _ -> createResponse View.Added.render ok200 
-          addDef _ = do 
+          addDef _ =  
               createResponse (View.Error.render "Internal error") internalServerError500
 
 createResponse :: D.Text -> Status -> ActionM ()
