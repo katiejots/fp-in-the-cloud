@@ -8,7 +8,7 @@ body.add, body.added {
 }
 
 body.error {
-  background: rgb(25, 165, 230) url('/images/skull.svg') 30% no-repeat;
+  background: rgb(25, 165, 230) url('/images/skull.svg') 50% no-repeat;
 }
 
 div.head {
