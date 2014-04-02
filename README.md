@@ -51,6 +51,8 @@ Please ensure you have the prerequisites installed ahead of the workshop session
 
 Go to [http://localhost:4000](http://localhost:4000) in your browser to view the application.
 
+* To use the GHCI REPL in the context of your application code, use the command `cabal repl`.
+
 # Making Changes
 
 * Make your changes to the app code and test them locally. When they look right, add and commit the changes in Git with commands such as `git add -A` and `git commit -m "I changed x because y"`.
