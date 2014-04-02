@@ -16,9 +16,9 @@ Please ensure you have the prerequisites installed ahead of the workshop session
 
 * Install GHC and Cabal. Make sure you end up with GHC version 7.6 or above and Cabal version 1.18 or above (you can use the commands `cabal update` and `cabal install cabal-install --global` to get the latest version). If you are using Windows, install the [Haskell Platform](http://www.haskell.org/platform). If you are using a \*nix system, just install `ghc` (the Glasgow Haskell Compiler) and `cabal-install` with the package manager for your distribution. 
 
-* Install Git, Ruby, and the [RHC Client tools](https://www.openshift.com/developers/rhc-client-tools-install).
+* Install the [RHC Client tools](https://www.openshift.com/developers/rhc-client-tools-install) (Git and Ruby are dependencies for this; the link has information on how to install on various systems).
 
-* Install PostgreSQL 9.2 or above (Optional; install if you want to be able to test your app locally. Otherwise, you can push to the cloud and see your results there.)
+* Install PostgreSQL 9.2 or above (Optional; install if you want to be able to test your app locally. Otherwise, you can push to the cloud and see your results there.) Make sure you can connect to a running instance of the database with the `psql` command.
 
 * Create an [OpenShift Online account](https://www.openshift.com/app/account/new).
 

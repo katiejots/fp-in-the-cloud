@@ -14,15 +14,15 @@ import qualified Text.Blaze.Html5 as H
 -- |
 --
 -- >>> render ""
--- "<!DOCTYPE HTML>\n<html><head><title>Pirate Gold</title><link rel=\"stylesheet\" href=\"css/style.css\"></head><body><h1>Arrr, you&#39;ve run aground matey!</h1><h2>Error: </h2><p><a href=\"/\">Home</a></p></body></html>"
+-- "<!DOCTYPE HTML>\n<html><head><title>Pirate Gold</title><link rel=\"stylesheet\" href=\"css/style.css\"></head><body class=\"error\"><h1>Arrr, you&#39;ve run aground matey!</h1><h2>Error: </h2><p><a href=\"/\">Home</a></p></body></html>"
 --
 -- >>> render "abc"
--- "<!DOCTYPE HTML>\n<html><head><title>Pirate Gold</title><link rel=\"stylesheet\" href=\"css/style.css\"></head><body><h1>Arrr, you&#39;ve run aground matey!</h1><h2>Error: abc</h2><p><a href=\"/\">Home</a></p></body></html>"
+-- "<!DOCTYPE HTML>\n<html><head><title>Pirate Gold</title><link rel=\"stylesheet\" href=\"css/style.css\"></head><body class=\"error\"><h1>Arrr, you&#39;ve run aground matey!</h1><h2>Error: abc</h2><p><a href=\"/\">Home</a></p></body></html>"
 --
 -- render "abc&def\"ghi"
 -- "<!DOCTYPE HTML>\n<html><head><title>Pirate Gold</title><link rel=\"stylesheet\" href=\"css/style.css\"></head><body><h1>Arrr, you&#39;ve run aground matey!</h1><h2>Error: abc&amp;def&quot;ghi</h2><p><a href=\"/\">Home</a></p></body></html>"
 --
--- prop> let r = D.unpack (render s) in "<!DOCTYPE HTML>\n<html><head><title>Pirate Gold</title><link rel=\"stylesheet\" href=\"css/style.css\"></head><body><h1>Arrr, you&#39;ve run aground matey!</h1><h2>Error: " `isPrefixOf` r
+-- prop> let r = D.unpack (render s) in "<!DOCTYPE HTML>\n<html><head><title>Pirate Gold</title><link rel=\"stylesheet\" href=\"css/style.css\"></head><body class=\"error\"><h1>Arrr, you&#39;ve run aground matey!</h1><h2>Error: " `isPrefixOf` r
 --
 -- prop> let r = D.unpack (render s) in "</h2><p><a href=\"/\">Home</a></p></body></html>" `isSuffixOf` r
 render :: String -> D.Text

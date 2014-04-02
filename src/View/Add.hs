@@ -11,7 +11,7 @@ import qualified Text.Blaze.Html5 as H
 -- |
 --
 -- >>> render
--- "<!DOCTYPE HTML>\n<html><head><title>Pirate Gold</title><link rel=\"stylesheet\" href=\"css/style.css\"></head><body><h2>Add a definition to the treasure chest</h2><form action=\"/add\" method=\"post\"><p>Phrase: </p><input name=\"phrase\" type=\"text\"><p>Meaning: </p><input name=\"meaning\" type=\"text\"><p><input type=\"submit\"></p></form></body></html>"
+-- "<!DOCTYPE HTML>\n<html><head><title>Pirate Gold</title><link rel=\"stylesheet\" href=\"css/style.css\"></head><body class=\"add\"><h2>Add a definition to the treasure chest</h2><form action=\"/add\" method=\"post\"><p>Phrase: </p><input name=\"phrase\" type=\"text\"><p>Meaning: </p><input name=\"meaning\" type=\"text\"><p><input type=\"submit\"></p></form></body></html>"
 render :: D.Text
 render = renderHtml . H.docTypeHtml $ do
   header
