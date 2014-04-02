@@ -7,6 +7,7 @@ import Control.Monad.IO.Class (liftIO)
 import Network.Wai.Middleware.RequestLogger
 import Network.Wai.Middleware.Static (addBase, noDots, staticPolicy, (>->))
 import Data.Default (def)
+import Data.Monoid((<>))
 import Network.Wai.Handler.Warp (settingsPort, settingsHost)
 import Data.Conduit.Network
 import Network.HTTP.Types.Status
@@ -22,6 +23,10 @@ opts :: String -> Int -> Options
 opts ip port = def { verbose = 0
                    , settings = (settings def) { settingsHost = Host ip, settingsPort = port }
                }
+
+repoPath :: IO String 
+repoPath = do basePath <- getEnvDefault "OPENSHIFT_REPO_DIR" ""
+              return basePath
 
 dbConnInfo :: IO ConnectInfo 
 dbConnInfo = do host <- getEnvDefault "OPENSHIFT_POSTGRESQL_DB_HOST" "127.0.0.1"
@@ -41,9 +46,9 @@ main = do
     case args of
       [ip,port] -> do conn <- dbConn
                       _ <- Def.createDefinitionTable conn
-
+                      base <- repoPath
                       scottyOpts (opts ip (read port)) $ do
-                          middleware (staticPolicy (noDots >-> addBase "resources"))
+                          middleware (staticPolicy (noDots >-> addBase (base <> "resources")))
                           middleware logStdoutDev
                           processRoutes conn
       _ -> putStrLn "Required arguments [ip] [port]"

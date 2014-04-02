@@ -59,6 +59,16 @@ Go to [http://localhost:4000](http://localhost:4000) in your browser to view the
 
 * Use the command `rhc app show` to find the URL for your application, where you can view your changes. 
 
+# Using RHC
+
+RHC has many useful commands. To discover them, use the option `--help` with the various commands. For example, you can execute the command `rhc --help`, or `rhc app --help`, or `rhc ssh --help`.
+
+# Marker Files
+
+Marker files are empty files with a particular name, that configure some behaviour on OpenShift. To set a marker, create an empty file in _.openshift/markers_ with the relevant name, and add, commit, and push this file with `git`. 
+
+Two useful markers files you may be interested in are *hot_deploy_* (to push code without causing a server restart) and *force_clean_build* (remove all Cabal packages/executables before building). To change the configuration back again, simply remove the marker file and do another `git add`, `git commit` and `git push`.
+
 # Cloud Connections
 
 * If something goes wrong with the application instance running in the cloud, you can use the command `rhc tail` to view the logs and `rhc ssh` to connect to the container (gear) in which your application is running. These commands should be issued from within the _pirategold_ directory, or else you should append `-a pirategold` to the commands to let RHC know to which app to apply them.
