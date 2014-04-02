@@ -15,7 +15,6 @@ import qualified Text.Blaze.Html5 as H
 -- >>> :set -XOverloadedStrings
 -- >>> import Data.List(isPrefixOf, isSuffixOf)
 -- >>> import Test.QuickCheck
--- >>> import qualified Data.Text as T
 -- >>> instance Arbitrary Definition where arbitrary = do a <- arbitrary; b <- arbitrary; return (Definition (D.pack a) (D.pack b))
 
 -- | 
