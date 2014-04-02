@@ -69,7 +69,7 @@ RHC has many useful commands. To discover them, use the option `--help` with the
 
 Marker files are empty files with a particular name, that configure some behaviour on OpenShift. To set a marker, create an empty file in _.openshift/markers_ with the relevant name, and add, commit, and push this file with `git`. 
 
-Two useful markers files you may be interested in are *hot_deploy_* (to push code without causing a server restart) and *force_clean_build* (remove all Cabal packages/executables before building). To change the configuration back again, simply remove the marker file and do another `git add`, `git commit` and `git push`.
+Two useful markers files you may be interested in are *hot_deploy* (to push code without causing a server restart) and *force_clean_build* (remove all Cabal packages/executables before building). To change the configuration back again, simply remove the marker file and do another `git add`, `git commit` and `git push`.
 
 # Cloud Connections
 
