@@ -25,8 +25,7 @@ opts ip port = def { verbose = 0
                }
 
 repoPath :: IO String 
-repoPath = do basePath <- getEnvDefault "OPENSHIFT_REPO_DIR" ""
-              return basePath
+repoPath = getEnvDefault "OPENSHIFT_REPO_DIR" ""
 
 dbConnInfo :: IO ConnectInfo 
 dbConnInfo = do host <- getEnvDefault "OPENSHIFT_POSTGRESQL_DB_HOST" "127.0.0.1"
