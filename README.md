@@ -51,7 +51,7 @@ Please ensure you have the prerequisites installed ahead of the workshop session
 
 Go to [http://localhost:4000](http://localhost:4000) in your browser to view the application.
 
-* To use the GHCI REPL in the context of your application code, use the command `cabal repl`.
+* To use the GHCI REPL in the context of your application code, execute the command `cabal repl src/Main.hs` from the root of the repository.
 
 # Making Changes
 
