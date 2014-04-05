@@ -26,6 +26,7 @@ library
                       , View.Add
                       , View.Added
                       , View.Error
+                      , Transform
   other-extensions:   OverloadedStrings 
   build-depends:        base >=4.6 && <4.7
                       , transformers >=0.3 && <0.4
